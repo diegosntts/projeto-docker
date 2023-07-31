@@ -1,4 +1,4 @@
-version: '3'  
+version: "3"
 services:
   nodejs:
     image: jacksonpires/app-node-dockerizado:v4
@@ -7,12 +7,12 @@ services:
       - 3090
     depends_on:
       - db
-  db: 
+  db:
     image: postgres
     volumes:
       - ./dados_postgres:/var/lib/postgresql/data
     restart: always
     environment:
-        POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_PASSWORD: mysecretpassword
     ports:
       - 5432
